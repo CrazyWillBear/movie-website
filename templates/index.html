@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CapBear's Movie Reviews</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="grid-container">
+        <div class="box-c">
+            <h1 style="text-align: center">CapBear's Movie Reviews</h1>
+        </div>
+
+        <div>
+            <a href="/about">
+                <div class="box-c page-box">
+                    <h3 style="text-align: center">About</h3>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="box-c">
+        <h3>Notices:</h3>
+        <h4>
+            Check bottom of About page for info on scoring system, use Ctrl+F to search for specific movies, and keep in mind many movies do not have reviews written (yet).
+        </h4>
+    </div>
+    
+    {% for review in reviews %}
+    {% if loop.index % 2 == 0 %}
+                {% set box = 'box-r' %}
+            {% else %}
+                {% set box = 'box-l' %}
+    {% endif %}
+
+    <a href="{{ url_for('review', film_name=review.name | lower | replace(' ', '-')) }}">
+        <div class="{{ box }}">
+            <h3>{{ review.name }} - Rating: {{ review.rating }}</h3>
+        </div>
+    </a>
+    {% endfor %}
+
+    {% if all_viewed == False %}
+        <form method="post" action="/">
+            <input type="submit" name="view_all" value="View All">
+        </form>
+    {% endif %}
+    {% if all_viewed %}
+        <form method="post" action="/">
+            <input type="submit" name="view_less" value="View Less">
+        </form>
+    {% endif %}
+</body>
+</html>

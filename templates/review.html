@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ review.name }} - CapBear's Movie Reviews</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="grid-container">
+        <div class="box-c">
+            <h1 style="text-align: center">{{ review.name }} - Rating: {{ review.rating }}</h1>
+        </div>
+
+        <div>
+            <a href="/">
+                <div class="box-l">
+                    <h3 style="text-align: center">Home</h3>
+                </div>
+            </a>
+            <a href="/about">
+                <div class="box-r">
+                    <h3 style="text-align: center">About</h3>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="box-c">
+        <p>{{ review.review }}</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+html:root {
+  color-scheme: dark;
+}
+
+body,
+input {
+  margin: 0px;
+  padding: 1%;
+  background-color: #282828;
+
+  font-family: "JetBrains Mono", monospace;
+  color: #ebdbb2;
+}
+
+h1,
+h2,
+h3 {
+  color: #fbf1c7;
+  padding-left: 0.5%;
+  padding-right: 0.5%;
+}
+
+h4 {
+  padding-left: 0.5%;
+  padding-right: 0.5%;
+}
+
+p {
+  color: #ebdbb2;
+  padding-left: 0.5%;
+  padding-right: 0.5%;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  float: right;
+}
+
+.box-l {
+  float: left;
+  width: 45%;
+}
+
+.box-r {
+  float: right;
+  width: 45%;
+}
+
+.box-c {
+  width: 96%; /* 45% width + 1% padding */
+}
+
+.box-l,
+.box-r,
+.box-c,
+input {
+  margin: 1%;
+  background-color: #3c3836;
+  border-radius: 5px;
+  padding: 1%;
+}
+
+.box-l,
+.box-r,
+.page-box {
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover,
+input:hover,
+.box-l:hover,
+.box-r:hover,
+.page-box:hover {
+  transform: scale(1.03);
+  cursor:pointer;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  align-items: center;
+}
