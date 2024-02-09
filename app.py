@@ -39,7 +39,7 @@ def about():
     return render_template('about.html')
 
 def load_review(film_name):
-    filename = f"./reviews/{film_name}.json"
+    filename = "./reviews/" + film_name + ".json"
     if os.path.isfile(filename):
         with open(filename, 'r', encoding='utf-8') as file:
             return json.load(file)
@@ -98,5 +98,5 @@ add_reviews_from_csv()
 if __name__ == '__main__':
     p = Process(target=loop_process, args=(5,))
     p.start()
-    app.run(debug=True, use_reloader=False)
+    app.run(debug=False, use_reloader=False)
     p.join()
