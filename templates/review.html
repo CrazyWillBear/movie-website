@@ -2,7 +2,17 @@
 <html>
 <head>
     <title>{{ review.name }} - CapBear's Movie Reviews</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link
+        rel="stylesheet"
+        media="screen and (max-width: 499px)"
+        href="{{ url_for('static', filename='mobile.css') }}"
+    />
+    <link
+        rel="stylesheet"
+        media="screen and (min-width: 500px)"
+        href="{{ url_for('static', filename='desktop.css') }}"
+    />
 </head>
 <body>
     <div class="grid-container">
